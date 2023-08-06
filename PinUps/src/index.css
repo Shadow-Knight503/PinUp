@@ -1,0 +1,10 @@
+body {
+  min-height: 100px;
+  min-width: 150px;
+  place-items: center;
+  background-color: #222831 !important;
+}
+#root {
+  background-color: #222831;
+  height: 100%;
+}

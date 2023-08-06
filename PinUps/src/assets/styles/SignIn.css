@@ -1,0 +1,20 @@
+.Auth {
+    background-color: #272121;
+    padding-top: 50%;
+    min-width: 300px;
+    min-height: 300px;
+    margin: auto;
+    border: 1px solid rgb(57, 56, 56);
+    border-radius: 15px;
+    box-shadow: 7.5px 7.5px 7.5px rgba(0, 0, 0, 0.2);
+    color: #D8D9DA;
+    font-family: 'Open Sans Light', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.Auth button {
+    background-color: #FF4D00;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-size: 15px;
+    transform: scale(1.1);
+}

@@ -1,0 +1,108 @@
+.Board {
+    position: relative;
+    background-color: #393E46;
+    border: 2px #00ADB5 solid;
+    border-radius: 5px;
+    height: 650px;
+    margin: auto;
+    max-width: 50vmax;
+    overflow-y: auto;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #222831;
+    border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #222831; 
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #014d57; 
+    border: 2px #047f85 solid;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #012f4f; 
+}
+.BoardCover {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.BoardBody {
+    text-align: left;
+    height: 585px;
+    padding: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.BoardBody div {
+    border: 2px #00ADB5 solid;
+    display: table;
+    color: #EEEEEE;
+    background-color: #272121;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+    max-width: 90%;
+    animation: MsgLoad 0.75s forwards ease-out;
+    transform: translateX(-100%);
+}
+.BoardBody div span {
+    font-size: 10px;
+}
+.BoardBody div p {
+
+}
+.PinFrm {
+    padding: 5px;
+    width: 100%;
+}
+.PinFrm div input, .PinFrm div input:focus {
+    color: #03e3ef;
+    background-color: #272121;
+    border-color: #00ADB5;
+}
+.PinFrm div button {
+    border-color: #00ADB5;
+}
+.SbtBtn {
+    background-color: #00ADB5;
+    border-color: #00ADB5;
+}
+.SbtBtn i {
+    color: #00ADB5;
+    z-index: 5;
+}
+.SbtBtn div {
+    border-radius: 50%;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 48%;
+    left: 49%;
+}
+.SbtBtn:hover div {
+    box-shadow: 0 0 20px 10px #00ADB5;
+}
+.SbtBtn:hover {
+    transition: none;
+}
+@keyframes MsgLoad {
+    0% {
+        transform: translateX(-100%)
+    } 75% {
+        transform: translateX(10%);
+    } 100% {
+        transform: translateX(0%);
+    }
+}
