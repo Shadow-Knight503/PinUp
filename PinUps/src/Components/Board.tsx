@@ -1,5 +1,4 @@
-import React, { useState, useEffect, 
-    createRef, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import { addDoc, collection, serverTimestamp,
     query, onSnapshot, orderBy, limit } from 'firebase/firestore'
 import { auth, Db } from "../Config"
@@ -7,9 +6,10 @@ import '../assets/styles/Board.css'
 
 export const Board = () => {
     const [NewPin, setNewPin] = useState("")
-    const [Pins, setPins] = useState([])
-    const Vew = useRef(null)
-
+    const [Pins, setPins] = useState([{
+        UserName: "", Meassage: "", ID: ""}])
+    const Vew: any = useRef(null)
+    
     const PinsRef = collection(Db, "PinBoard")
 
     function delay(inp: number) {
@@ -50,7 +50,7 @@ export const Board = () => {
             <div className="BoardCover">
                 <div className="BoardBody">
                     {Pins.map((Pin) => (
-                        <div>
+                        <div key={Pin.ID}>
                             <span>{Pin.UserName}</span>
                             <p>{Pin.Meassage}</p>
                         </div>
