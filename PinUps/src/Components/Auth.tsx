@@ -17,9 +17,12 @@ export const Auth = (props: any) => {
     }
 
     return( 
-        <div className="Auth">
-            <p>Sign In with Google</p>
-            <button onClick={SignIn}>Sign In</button>
+        <div className="AuthCover">
+            <div className="Auth">
+                <p>Sign In with Google</p>
+                <button type="button" className="btn" 
+                onClick={SignIn}>Sign In</button>
+            </div>
         </div>
     )
 }
