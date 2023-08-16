@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { addDoc, collection, serverTimestamp,
-    query, onSnapshot, orderBy, limit } from 'firebase/firestore'
+    query, onSnapshot, orderBy, limit, limitToLast } from 'firebase/firestore'
 import { auth, Db } from "../Config"
 import '../assets/styles/Board.css'
 
@@ -17,12 +17,13 @@ export const Board = () => {
     }
     
     useEffect(() => {
-        const qryPins = query(PinsRef, orderBy('PostTime'), limit(25))
+        const qryPins = query(PinsRef, orderBy('PostTime'), limitToLast(25))
         onSnapshot(qryPins, async (snapshot) => {
             let Pins: any = []
 
             snapshot.forEach((doc) => {
-                Pins.push({...doc.data(), ID: doc.id})
+                Pins.push({...doc.data(), 
+                    ID: doc.id})
             })
 
             setPins(Pins)
@@ -33,6 +34,7 @@ export const Board = () => {
 
     const Sbt = async (e: any) => {
         e.preventDefault()
+        console.log(NewPin)
         if (NewPin === "") return
 
         await addDoc(PinsRef, {
@@ -69,7 +71,7 @@ export const Board = () => {
                             type="submit" id="button-addon2">
                                 <i className="bi-send-fill" />
                                 <div />
-                        </button>
+                        </button> 
                     </div>
                 </form>
             </div>
